@@ -1,2 +1,3 @@
 <h1>Hello, {{ title }}</h1>
-<app-btc></app-btc>
+<app-btc [ticker]="'bitcoin'" (priceChange)="updatePrice($event)"></app-btc>
+<app-dump-btc [price]="price()"></app-dump-btc>
