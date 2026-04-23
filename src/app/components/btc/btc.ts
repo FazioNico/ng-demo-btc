@@ -24,7 +24,9 @@ export class BTC implements OnInit {
   public priceChange = output<number>();
 
   ngOnInit(): void {
-    this.getPtcPrice();
+    setTimeout(() => {
+      this.getPtcPrice();
+    }, 2000);
   }
 
   async getPtcPrice($event?: MouseEvent): Promise<void> {

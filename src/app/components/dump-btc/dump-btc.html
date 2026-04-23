@@ -1,1 +1,5 @@
-<p>dump-btc price is: {{ price() }}</p>
+@if (price() !== 0) {
+  <p [style.color]="price() > 77900 ? 'green' : 'red'">dump-btc price is: {{ price() }}</p>
+} @else {
+  <p>dump-btc price is not available.</p>
+}
