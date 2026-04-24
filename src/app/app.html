@@ -5,3 +5,19 @@
 <p [style.color]="title | hasWord: 'pipo'">
   {{ title }}
 </p>
+
+<input type="text" [(ngModel)]="title" />
+<button (click)="submit()">submit</button>
+<hr />
+<form [formGroup]="demoForm" (ngSubmit)="submit()">
+  <input type="text" formControlName="firstName" /><br/>
+  <div [hidden]="demoForm.get('firstName')?.valid">
+    Le firstanme n'est pas valid!
+    <div [hidden]="!demoForm.get('firstName')?.hasError('minlength')">
+      La longueur minimum doit être de 2 chars.
+    </div>
+  </div>
+  <input type="text" formControlName="lastname" />
+  <button type="submit">submit</button>
+</form>
+<button (click)="addAddress()">add address</button>
