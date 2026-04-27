@@ -1,6 +1,6 @@
 <h1>Hello, {{ title }}</h1>
-<app-btc [ticker]="'bitcoin'" (priceChange)="updatePrice($event)"></app-btc>
-<app-dump-btc [price]="price()"></app-dump-btc>
+<app-btc [ticker]="'bitcoin'"></app-btc>
+<app-dump-btc [price]="btcPrice()"></app-dump-btc>
 
 <p [style.color]="title | hasWord: 'pipo'">
   {{ title }}
